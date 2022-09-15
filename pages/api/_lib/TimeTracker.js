@@ -7,10 +7,12 @@ const APP_URL = "https://prd-pt1.lg.com.br/FrequenciaCoreWeb/home";
 async function execute(isDev) {
   console.log("Starting! ---->>>");
   const options = await getOptions(isDev);
+  console.log("options --->>", options);
   const browser = await puppeteer.launch(options);
 
   const page = await browser.newPage();
 
+  console.log("page --->>");
   page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
 
   await page.goto(HOME_URL);
