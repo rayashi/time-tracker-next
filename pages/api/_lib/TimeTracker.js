@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer-core");
-const { getOptions } = require("./chromeOptions");
+const { getOptions } = require("./ChromeOptions");
 
 const HOME_URL = "https://login.lg.com.br/login/uberlandiarefrescos";
 const APP_URL = "https://prd-pt1.lg.com.br/FrequenciaCoreWeb/home";
