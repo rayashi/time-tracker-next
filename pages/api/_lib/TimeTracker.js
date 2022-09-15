@@ -66,7 +66,7 @@ async function execute(isDev) {
 
     if (targetElement) {
       console.log("---->>>", targetElement.innerText);
-      targetElement.click();
+      // targetElement.click();
       return true;
     }
     return false;
