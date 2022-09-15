@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   if (req.headers.authorization !== `Bearer ${process.env.API_TOKEN}`) {
-    res.status(401).send("Authorization error");
+    res.status(401).send("Authorization token error");
     return;
   }
 
