@@ -46,7 +46,7 @@ async function execute(isDev) {
 
   await page.waitForSelector(".MuiContainer-root");
 
-  await page.waitForTimeout(1000);
+  // await page.waitForTimeout(100);
 
   await page.evaluate(() => {
     const elements = [...document.querySelectorAll("button")];
@@ -58,7 +58,7 @@ async function execute(isDev) {
     }
   });
 
-  await page.waitForTimeout(1000);
+  // await page.waitForTimeout(100);
 
   const confirmation = await page.evaluate(() => {
     const elements = [...document.querySelectorAll("button")];
