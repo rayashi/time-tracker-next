@@ -16,11 +16,11 @@ async function execute(isDev) {
   await page.goto(HOME_URL);
 
   await page.waitForSelector("#Login");
-  await page.type("#Login", process.env.LG_USERNAME, { delay: 100 });
+  await page.type("#Login", process.env.LG_USERNAME);
   await page.click(".login__botao-continuar");
 
   await page.waitForSelector("#Senha");
-  await page.type("#Senha", process.env.LG_PASSWORD, { delay: 100 });
+  await page.type("#Senha", process.env.LG_PASSWORD);
   await page.click(".login__botao-continuar");
 
   await page.waitForSelector(".p-carousel-content");
@@ -46,7 +46,7 @@ async function execute(isDev) {
 
   await page.waitForSelector(".MuiContainer-root");
 
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(1000);
 
   await page.evaluate(() => {
     const elements = [...document.querySelectorAll("button")];
@@ -58,7 +58,7 @@ async function execute(isDev) {
     }
   });
 
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(1000);
 
   const confirmation = await page.evaluate(() => {
     const elements = [...document.querySelectorAll("button")];
@@ -72,7 +72,6 @@ async function execute(isDev) {
     return false;
   });
 
-  await page.waitForTimeout(2000);
   await browser.close();
 
   return confirmation;
